@@ -12,7 +12,7 @@
     body.classList.toggle('motion-paused', motionPaused);
     document.documentElement.classList.toggle('motion-paused', motionPaused);
     motionButton.setAttribute('aria-pressed', String(motionPaused));
-    motionButton.innerHTML = motionPaused ? 'Motion paused <span aria-hidden="true">▶</span>' : 'Pause motion <span aria-hidden="true">Ⅱ</span>';
+    motionButton.innerHTML = motionPaused ? 'Resume animations <span aria-hidden="true">▶</span>' : 'Pause animations <span aria-hidden="true">Ⅱ</span>';
     if (motionPaused || document.hidden) cancelNetwork();
     else renderNetwork();
   }
@@ -30,13 +30,6 @@
   document.addEventListener('visibilitychange', applyMotion);
   applyMotion();
   document.querySelector('.site-controls').hidden = false;
-
-  const gridButton = document.querySelector('#grid-toggle');
-  gridButton.addEventListener('click', () => {
-    const broken = body.classList.toggle('grid-broken');
-    gridButton.setAttribute('aria-pressed', String(broken));
-    gridButton.innerHTML = broken ? 'Restore the grid <span aria-hidden="true">⌗</span>' : 'Break the grid <span aria-hidden="true">✳</span>';
-  });
 
   const filters = document.querySelector('.filters');
   const projects = [...document.querySelectorAll('.project')];
