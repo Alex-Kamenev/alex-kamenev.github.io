@@ -48,10 +48,10 @@
         </div>
         <figure class="network-art">
           <div class="art-topline mono"><span>FIG. 01 / CONNECTED THINKING</span><span class="live-label"><i aria-hidden="true"></i> LIVE SKETCH</span></div>
-          <canvas id="network" aria-hidden="true"></canvas>
+          <canvas id="network" role="img" aria-label="Interactive network sketch" aria-describedby="network-instructions" aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home"></canvas>
           <svg class="network-fallback" viewBox="0 0 500 500" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width=".7"><ellipse cx="250" cy="250" rx="185" ry="190"/><ellipse cx="250" cy="250" rx="120" ry="190"/><ellipse cx="250" cy="250" rx="45" ry="190"/><ellipse cx="250" cy="250" rx="185" ry="60"/><ellipse cx="250" cy="250" rx="185" ry="135"/><path d="M65 250h370M250 60v380M90 130l320 240M90 370l320-240"/></g></svg>
-          <div class="art-caption"><p>Data, software,<br><em>and</em> research.</p><button class="rewire" type="button" aria-label="Rewire the interactive network" hidden>Rewire <span aria-hidden="true">↻</span></button></div>
-          <figcaption class="sr-only">An interactive, generative network drawing. Move your pointer over it to change its perspective, or use the Rewire button to create a new arrangement.</figcaption>
+          <div class="art-caption"><p class="network-hint" aria-hidden="true"><span class="hint-pointer">Move to explore.<br>Drag to rotate.</span><span class="hint-touch">Swipe sideways<br>to rotate.</span><span class="hint-keys">Arrow keys rotate.<br>Home resets.</span><span class="hint-paused">Drag to rotate.<br>Motion is paused.</span></p><button class="rewire" type="button" aria-label="Create a new network pattern" hidden>New pattern <span aria-hidden="true">↻</span></button></div>
+          <figcaption id="network-instructions" class="sr-only">Move your pointer to turn the network and draw nearby nodes toward it. Drag for a full rotation, or swipe sideways on touch screens. With the sketch focused, use arrow keys to rotate and Home to reset the view. New pattern changes the connections. Pausing animations stops automatic motion and hover effects; dragging and keyboard controls still update the still image.</figcaption>
         </figure>
         <span class="hero-side-note mono" aria-hidden="true">A WORK IN CONSTANT EVOLUTION ↗</span>
       </div>
