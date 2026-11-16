@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540" fill="none">
+  <!-- Methodology illustration only: no experimental results or learner data. -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" stroke="#d3a27e" stroke-opacity=".10"/></pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="m1 1 5 3-5 3" stroke="#d3a27e" stroke-width="1"/></marker>
+  </defs>
+  <path fill="url(#grid)" d="M24 20h552v484H24z"/>
+  <g stroke="#eee9df" stroke-width="1" stroke-opacity=".22">
+    <ellipse cx="300" cy="259" rx="215" ry="184" transform="rotate(-26 300 259)"/>
+    <ellipse cx="300" cy="259" rx="239" ry="120" transform="rotate(28 300 259)"/>
+    <path d="M300 46v415M64 260h470" stroke-dasharray="3 6"/>
+    <circle cx="300" cy="259" r="166"/>
+  </g>
+  <g stroke="#d3a27e" stroke-width="1.5" marker-end="url(#arrow)">
+    <path d="M300 152v46"/>
+    <path d="M300 290v45"/>
+    <path d="M399 375h50V109h-49"/>
+  </g>
+  <rect x="151" y="63" width="298" height="89" rx="44.5" fill="#1b2e34" stroke="#d3a27e"/>
+  <rect x="151" y="200" width="298" height="89" rx="44.5" fill="#d3a27e" stroke="#d3a27e"/>
+  <rect x="151" y="337" width="298" height="89" rx="44.5" fill="#1b2e34" stroke="#d3a27e"/>
+  <g font-family="Arial, sans-serif" font-size="31" fill="#eee9df" text-anchor="middle" letter-spacing="-1">
+    <text x="300" y="119">Predict</text>
+    <text x="300" y="256" fill="#1d2b2c">Observe</text>
+    <text x="300" y="393">Update</text>
+  </g>
+  <g font-family="monospace" font-size="11" fill="#eee9df" letter-spacing="1">
+    <text x="78" y="111">01</text><text x="78" y="248">02</text><text x="78" y="385">03</text>
+    <text x="469" y="265" transform="rotate(90 469 265)">NEXT EVENT</text>
+    <text x="300" y="478" text-anchor="middle" font-size="10">ORDER IS PART OF THE METHOD</text>
+  </g>
+  <g stroke="#d3a27e"><circle cx="84" cy="260" r="5" fill="#1b2e34"/><circle cx="300" cy="39" r="5" fill="#1b2e34"/><path d="M65 448v12m-6-6h12M527 68v12m-6-6h12"/></g>
+</svg>

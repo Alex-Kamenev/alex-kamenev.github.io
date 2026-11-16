@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeeae1">
+
+  <meta name="description" content="ATLAS Research Lab: an independent Python prototype for studying learner models with synthetic simulation, temporal evaluation, and inspectable methodology.">
+  <title>ATLAS Research Lab — Aleksandar Kamenev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=IBM+Plex+Mono:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../case-studies.css?v=5239a8509a6a">
+  <link rel="canonical" href="https://alex-kamenev.github.io/work/atlas/">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="identity" href="/" aria-label="Aleksandar Kamenev, portfolio"><span class="monogram" aria-hidden="true">ak.</span><span>ALEKSANDAR<br>KAMENEV</span></a>
+    <span class="case-kind">Independent project</span>
+    <a class="back-link" href="/">Portfolio <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="project-title">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> INDEPENDENT ENGINEERING / RESEARCH PROTOTYPE</p>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <h1 id="project-title">ATLAS<span class="script">Research Lab.</span></h1>
+          <p class="hero-deck">A controlled test bench<br>for learner models.</p>
+          <p class="hero-description">Synthetic learners, familiar baselines, and an evaluation sequence that makes one question explicit: what could the model know <em>before</em> the next outcome?</p>
+          <a class="button" href="#method">Inside the method <span aria-hidden="true">↘</span></a>
+        </div>
+        <figure class="hero-figure">
+          <div class="figure-heading"><span>FIG. 01</span><span>AN EXPERIMENT, IN ORDER</span></div>
+          <img src="../assets/method-cycle.svg" width="600" height="540" alt="Conceptual event sequence: predict an outcome, observe it, update the model, then repeat for the next event.">
+          <figcaption><span>CONCEPTUAL DIAGRAM</span><span>Prediction precedes observation.</span></figcaption>
+        </figure>
+      </div>
+      <dl class="project-facts">
+        <div><dt>CONTEXT</dt><dd>Independent personal lab</dd></div>
+        <div><dt>IMPLEMENTATION</dt><dd>Python · standalone CLI</dd></div>
+        <div><dt>DATA</dt><dd>Synthetic learner histories</dd></div>
+        <div><dt>STATUS</dt><dd>Open source · MIT</dd></div>
+      </dl>
+    </section>
+
+    <section class="brief wrap" aria-labelledby="brief-title">
+      <div class="section-marker"><span class="eyebrow">01 / THE ENGINEERING QUESTION</span><span class="mono">CONTROL THE SETUP. EXPOSE THE ASSUMPTIONS.</span></div>
+      <div class="brief-layout">
+        <h2 id="brief-title">Make the experiment<span class="script">inspectable.</span></h2>
+        <div class="body-copy"><p>Evaluating a learner model involves more than choosing an algorithm. Event order, data separation, and the way uncertainty is estimated all shape what a comparison can mean.</p><p>ATLAS brings those choices into a small, standalone lab. The release adapts generic model and evaluation code from my existing personal ATLAS lab, adds neutral synthetic inputs, and exposes the workflow through a Python command-line interface.</p><p class="purpose-note"><span aria-hidden="true">↳</span> The focus is an inspectable evaluation workflow, with simulation assumptions visible.</p></div>
+      </div>
+    </section>
+
+    <section class="method wrap" id="method" aria-labelledby="method-title">
+      <div class="section-marker"><span class="eyebrow">02 / METHOD BEFORE METRICS</span><span class="mono">SIMULATE → REPLAY → EVALUATE</span></div>
+      <div class="method-heading"><h2 id="method-title">Prediction first.<span class="script">Evidence after.</span></h2><p>The sequence is part of the experiment. Each stage has a specific job.</p></div>
+      <ol class="method-list">
+        <li><span class="step-number" aria-hidden="true">01</span><div><p class="step-kicker">CONSTRUCT THE INPUT</p><h3>Simulate learner histories.</h3><p>Use synthetic events with neutral categories—pattern, sequence, and allocation—so the lab can run independently of its original application.</p></div><span class="step-sign" aria-hidden="true">{ }</span></li>
+        <li><span class="step-number" aria-hidden="true">02</span><div><p class="step-kicker">RESPECT THE TIMELINE</p><h3>Predict. Observe. Update.</h3><p>Replay events in order. Record each prediction before the model observes that event’s outcome, then let the model update for what comes next.</p></div><span class="step-sign" aria-hidden="true">→</span></li>
+        <li><span class="step-number" aria-hidden="true">03</span><div><p class="step-kicker">SEPARATE THE EVALUATION</p><h3>Hold out later events.</h3><p>Use a temporal prefix/tail holdout: earlier events provide history, and later events are evaluated in order. Each prediction is recorded before that event updates the model.</p></div><span class="step-sign" aria-hidden="true">┤</span></li>
+        <li><span class="step-number" aria-hidden="true">04</span><div><p class="step-kicker">KEEP HISTORIES TOGETHER</p><h3>Bootstrap by learner.</h3><p>Resample learner blocks when estimating uncertainty, keeping the events within a learner history together.</p></div><span class="step-sign" aria-hidden="true">↺</span></li>
+      </ol>
+      <p class="method-footnote"><span class="mono">READ THIS AS</span> A description of the evaluation design. No benchmark results or model ranking are asserted here.</p>
+      <div class="execution-note"><div><span class="mono">ONE STANDALONE RUN</span><p>The CLI writes aggregate reports in <code>report.json</code> and <code>report.md</code>.</p></div><pre aria-label="Example ATLAS command"><code>python -m atlas_research_lab --output ./results --learners 20 --attempts 40 --seed 7 --bootstrap 100</code></pre></div>
+    </section>
+
+    <section class="models wrap" aria-labelledby="models-title">
+      <div class="section-marker"><span class="eyebrow">03 / THE MODEL SET</span><span class="mono">A SHARED EVALUATION WORKFLOW</span></div>
+      <div class="models-layout">
+        <div class="models-intro"><h2 id="models-title">Start with<span class="script">the baselines.</span></h2><p>Six model implementations adapted from the existing lab form the generic core. They provide different reference points for studying predictions on synthetic histories.</p><div class="model-glyph" aria-hidden="true"><span>p</span><span class="script">before</span><span>y</span></div></div>
+        <div class="model-table-wrap"><table class="model-table"><caption class="sr-only">ATLAS baseline models and their families</caption><thead><tr><th scope="col">MODEL</th><th scope="col">REFERENCE / FAMILY</th></tr></thead><tbody><tr><th scope="row">BaseRate</th><td>Rate baseline</td></tr><tr><th scope="row">Oracle</th><td>Simulator-probability reference</td></tr><tr><th scope="row">ItemOnly</th><td>Item-level baseline</td></tr><tr><th scope="row">BKT</th><td>Bayesian knowledge tracing</td></tr><tr><th scope="row">EloIRT</th><td>Elo-style model</td></tr><tr><th scope="row">PFA</th><td>PFA-inspired model</td></tr></tbody></table><p class="table-note">The release focuses on the generic Python core. Deep knowledge tracing and GPU experiments are outside its scope.</p></div>
+      </div>
+    </section>
+
+    <section class="provenance wrap" aria-labelledby="provenance-title">
+      <div class="section-marker"><span class="eyebrow">04 / THE RELEASE WORK</span><span class="mono">A CLEAR BOUNDARY AROUND THE CORE</span></div>
+      <div class="provenance-heading"><h2 id="provenance-title">What carries forward.<span class="script">What changed.</span></h2><p>The original lab and the standalone release are related, but they are not the same artifact.</p></div>
+      <div class="provenance-columns">
+        <article><span class="column-index mono">A / EXISTING PERSONAL-LAB CORE</span><h3>Preserve the methods.</h3><p>The release adapts generic baseline algorithms and evaluation methods from the existing personal ATLAS lab: learner simulation, temporal holdout, predict-before-observe replay, and learner-block bootstrap.</p></article>
+        <article><span class="column-index mono">B / NOVEMBER 2026 RELEASE WORK</span><h3>Isolate the experiment.</h3><p>AI-assisted work separated the reusable core, introduced neutral synthetic fixtures, and added the standalone CLI. This release work is distinct from the pre-existing model implementations.</p></article>
+      </div>
+      <div class="scope-note"><span class="mono">SCOPE</span><p>Synthetic learners only. The release excludes game-specific mastery and pacing policies, game assets and content, original game-derived datasets and conformance fixtures, real learner records, and employer information. It remains an independent engineering/research prototype, not a peer-reviewed study of human learning.</p></div>
+    </section>
+
+    <section class="release wrap" aria-labelledby="release-title">
+      <div class="release-copy"><span class="eyebrow">05 / SOURCE &amp; VALIDATION</span><h2 id="release-title">Ready for<span class="script">close inspection.</span></h2><p>The standalone Python package is available under the MIT license. The public source includes the synthetic workflow and its tests, with the model and simulation assumptions available for inspection.<br><a class="source-link" href="https://github.com/Alex-Kamenev/atlas-research-lab" target="_blank" rel="noopener noreferrer">Explore the source on GitHub <span aria-hidden="true">↗</span></a></p></div>
+      <div class="release-record"><div class="record-top"><span class="mono">ARTIFACT VALIDATION</span><span class="status-pill">Prototype</span></div><dl><div><dt>Artifact</dt><dd>Independent Python research prototype</dd></div><div><dt>License</dt><dd>MIT</dd></div><div><dt>Verification</dt><dd data-release-verification>77 standalone tests passed; offline wheel install reproduced the source report</dd></div><div><dt>Public source</dt><dd><a href="https://github.com/Alex-Kamenev/atlas-research-lab" target="_blank" rel="noopener noreferrer">atlas-research-lab ↗</a></dd></div></dl><p>The source also passed <a href="https://github.com/Alex-Kamenev/atlas-research-lab/actions/runs/43778253819" target="_blank" rel="noopener noreferrer">GitHub CI on Python 3.10, 3.12 and 3.14</a>. These checks cover the standalone artifact; they do not establish learning effectiveness, production adoption, or model superiority.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer wrap"><a href="/">Back to the portfolio <span aria-hidden="true">↗</span></a><p class="mono">ALEKSANDAR KAMENEV / ATLAS RESEARCH LAB</p><span class="footer-note">Independent project · 2026</span></footer>
+</body>
+</html>

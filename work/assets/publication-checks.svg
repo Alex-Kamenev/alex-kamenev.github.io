@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540" fill="none">
+  <!-- Public high-level concepts; not an internal architecture diagram. -->
+  <defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" stroke="#eee9df" stroke-opacity=".07"/></pattern></defs>
+  <path fill="url(#grid)" d="M24 20h552v484H24z"/>
+  <g stroke="#eee9df" stroke-opacity=".3"><rect x="94" y="65" width="367" height="350" transform="rotate(-7 94 65)"/><rect x="101" y="79" width="367" height="350" transform="rotate(-3 101 79)"/></g>
+  <rect x="108" y="94" width="384" height="350" fill="#1b2e34" stroke="#8fa1a3"/>
+  <g stroke="#52676b"><path d="M108 166h384M108 235h384M108 304h384M108 373h384"/></g>
+  <text x="136" y="137" fill="#d3a27e" font-family="monospace" font-size="13" letter-spacing="1">BEFORE PUBLICATION</text>
+  <g font-family="Arial,sans-serif" font-size="24" fill="#eee9df"><text x="165" y="209">Approval</text><text x="165" y="278">Content fingerprint</text><text x="165" y="347">Token expiry</text><text x="165" y="416">Circuit state</text></g>
+  <g stroke="#d3a27e"><circle cx="138" cy="201" r="5"/><circle cx="138" cy="270" r="5"/><circle cx="138" cy="339" r="5"/><circle cx="138" cy="408" r="5"/></g>
+  <text x="300" y="482" text-anchor="middle" fill="#c2cece" font-family="monospace" font-size="10" letter-spacing="1">CONCEPTUAL CHECKS / NO LIVE DATA</text>
+</svg>

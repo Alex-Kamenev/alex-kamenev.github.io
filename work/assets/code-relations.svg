@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540" fill="none">
+  <!-- Abstract relationships only; no repository structure or source content. -->
+  <defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" stroke="#eee9df" stroke-opacity=".07"/></pattern></defs>
+  <path fill="url(#grid)" d="M24 20h552v484H24z"/>
+  <g stroke="#eee9df" stroke-opacity=".35"><ellipse cx="300" cy="260" rx="219" ry="171" transform="rotate(-24 300 260)"/><ellipse cx="300" cy="260" rx="174" ry="213" transform="rotate(-24 300 260)"/><path d="m300 127-142 235h284L300 127Zm0 0v134M158 362l142-101 142 101"/></g>
+  <g stroke="#d3a27e" stroke-width="1.5"><path d="M300 157v69M191 338l80-57m59 0 79 57"/></g>
+  <g fill="#1b2e34" stroke="#a7b6b8"><rect x="200" y="82" width="200" height="75" rx="37.5"/><rect x="57" y="335" width="202" height="75" rx="37.5"/><rect x="341" y="335" width="202" height="75" rx="37.5"/></g>
+  <circle cx="300" cy="261" r="39" fill="#d3a27e"/>
+  <g font-family="Arial,sans-serif" font-size="27" text-anchor="middle" fill="#eee9df"><text x="300" y="129">Symbol</text><text x="158" y="382">Import</text><text x="442" y="382">Call</text></g>
+  <text x="300" y="273" font-family="monospace" font-size="29" text-anchor="middle" fill="#1b2e34">{ }</text>
+  <text x="300" y="477" font-family="monospace" font-size="10" letter-spacing="1" text-anchor="middle" fill="#c2cece">A CONCEPTUAL CODE GRAPH</text>
+  <g stroke="#d3a27e"><path d="M72 104v12m-6-6h12M525 443v12m-6-6h12"/><circle cx="119" cy="231" r="4"/><circle cx="482" cy="212" r="4"/></g>
+</svg>
