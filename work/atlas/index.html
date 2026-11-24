@@ -62,7 +62,7 @@
         <li><span class="step-number" aria-hidden="true">03</span><div><p class="step-kicker">SEPARATE THE EVALUATION</p><h3>Hold out later events.</h3><p>Use a temporal prefix/tail holdout: earlier events provide history, and later events are evaluated in order. Each prediction is recorded before that event updates the model.</p></div><span class="step-sign" aria-hidden="true">┤</span></li>
         <li><span class="step-number" aria-hidden="true">04</span><div><p class="step-kicker">KEEP HISTORIES TOGETHER</p><h3>Bootstrap by learner.</h3><p>Resample learner blocks when estimating uncertainty, keeping the events within a learner history together.</p></div><span class="step-sign" aria-hidden="true">↺</span></li>
       </ol>
-      <p class="method-footnote"><span class="mono">READ THIS AS</span> A description of the evaluation design. No benchmark results or model ranking are asserted here.</p>
+      <p class="method-footnote"><span class="mono">ABOUT THE METHOD</span> This page explains how the evaluation works. It doesn’t present benchmark results or rank the models.</p>
       <div class="execution-note"><div><span class="mono">ONE STANDALONE RUN</span><p>The CLI writes aggregate reports in <code>report.json</code> and <code>report.md</code>.</p></div><pre aria-label="Example ATLAS command"><code>python -m atlas_research_lab --output ./results --learners 20 --attempts 40 --seed 7 --bootstrap 100</code></pre></div>
     </section>
 
